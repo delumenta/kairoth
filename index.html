@@ -48,7 +48,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #ffd795;outline-offset:4p
 .card{position:relative;display:block;aspect-ratio:2/3;min-width:0;transition:transform .25s,filter .25s;filter:drop-shadow(0 8px 9px #000a)}
 .card:hover{transform:translateY(-8px);filter:drop-shadow(0 10px 12px #000b) brightness(1.13)}
 .card img{display:block;width:100%;height:100%;object-fit:fill}
-.card-fallback{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;height:100%;padding:15% 7% 10%;background:linear-gradient(180deg,#13100e,#15110e 56%,#583b2c);clip-path:polygon(50% 0,100% 8%,100% 92%,50% 100%,0 92%,0 8%);box-shadow:inset 0 0 0 2px #b18348}
+.card-fallback[hidden]{display:none}.card-fallback{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;height:100%;padding:15% 7% 10%;background:linear-gradient(180deg,#13100e,#15110e 56%,#583b2c);clip-path:polygon(50% 0,100% 8%,100% 92%,50% 100%,0 92%,0 8%);box-shadow:inset 0 0 0 2px #b18348}
 .card-fallback b{font-size:clamp(28px,3vw,48px);color:#c69658}.card-fallback strong{font:500 clamp(12px,1vw,17px) Cinzel,serif;margin:12px 0;color:#f3ddbb}.card-fallback em{font-size:clamp(13px,1vw,17px);line-height:1.07}
 .card-fallback::after{content:"";display:block;margin-top:auto;width:100%;height:25%;background:radial-gradient(ellipse at bottom,#d18d53 0%,#3b261f 50%,transparent 80%)}
 .more{background:linear-gradient(#0c0908,#18120e,#0c0908);padding:68px 25px 85px}
