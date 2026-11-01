@@ -59,17 +59,43 @@ footer{text-align:center;padding:25px;background:#0b0908;border-top:1px solid #5
 @media(max-width:850px){.site-header{height:70px;padding:0 18px}.brand{font-size:19px;flex:1;padding-left:55px}.site-nav{display:none;position:absolute;top:70px;left:10px;right:10px;flex-direction:column;align-items:stretch;gap:0;background:#110d0cf7;border:1px solid #936837;padding:15px 20px;box-shadow:0 8px 25px #000}.site-nav.open{display:flex}.site-nav a{padding:10px 0;font-size:15px}.menu-toggle{display:block;margin-right:45px}.search-link{right:8px;top:5px}.hero{min-height:calc(100svh - 70px);padding-top:100px}.hero-copy{width:min(90%,540px);margin:0 auto}.hero h1{font-size:clamp(53px,11vw,87px)}.home::before{background-position:62% center}.cards{max-width:650px;margin:65px auto 30px;padding:0 18px;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.action{font-size:12px;min-height:55px}}
 @media(max-width:520px){.hero{padding-top:80px}.brand{font-size:15px;padding-left:32px}.hero-copy p{font-size:22px}.actions{gap:8px}.action{font-size:9px;min-height:45px}.action.primary{padding-right:15px}.action.secondary{padding-left:22px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:60px}.tagline{font-size:10px}.home::before{background-position:70% top}.card-fallback strong{font-size:15px}.card-fallback em{font-size:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Refined HTML-built header: no stretched artwork */
+.site-header{height:76px;background:linear-gradient(180deg,#13100f 0%,#080707 100%);border-bottom:1px solid #9a6c38;box-shadow:0 4px 15px #000a;padding:0 clamp(20px,3.5vw,68px);gap:28px}
+.site-header::before,.site-header::after{content:"";position:absolute;pointer-events:none;top:5px;width:33px;height:33px;border-top:1px solid #a5763c}
+.site-header::before{left:7px;border-left:1px solid #a5763c}
+.site-header::after{right:7px;border-right:1px solid #a5763c}
+.brand{padding:0;flex:0 0 auto;gap:13px;font-size:22px;display:flex;line-height:1.07;min-width:235px}
+.brand-compass{display:block;color:#bf8c4c;width:46px;height:46px;flex:none;filter:drop-shadow(0 1px 3px #000)}
+.brand span{font-size:11px;letter-spacing:.22em}
+.site-nav{flex:1;justify-content:space-evenly;gap:15px;padding-right:60px}
+.site-nav a{font-size:clamp(11px,.93vw,15px);letter-spacing:.035em}
+.search-link{display:grid;place-items:center;color:#e7c48e;top:50%;transform:translateY(-50%);right:3.8%;width:37px;height:43px}
+.hero{max-width:none;padding-top:clamp(76px,8vh,116px);min-height:calc(100svh - 76px)}
+.hero-copy{margin-left:clamp(230px,19.5vw,405px);width:min(520px,38vw)}
+.hero h1{font-size:clamp(67px,5.6vw,99px)}
+/* Larger uncropped illustrated panels, aligned and evenly spaced */
+.cards{width:min(1210px,calc(100vw - clamp(310px,21vw,430px) - 42px));max-width:none;margin:clamp(45px,5.2vw,86px) 0 42px clamp(310px,21vw,430px);padding:0;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;align-items:start}
+.card{aspect-ratio:2/3;min-height:0;overflow:visible;filter:drop-shadow(0 6px 7px #0008)}
+.card img{width:100%;height:100%;display:block;object-fit:fill}
+.card-fallback[hidden]{display:none}
+.card-fallback{border:2px solid #a7763d;clip-path:polygon(50% 0%,100% 9%,100% 91%,50% 100%,0 91%,0 9%)}
+@media(min-width:1700px){.hero-copy{margin-left:20vw}.cards{margin-left:20.5vw;width:min(1220px,75vw)}}
+@media(max-width:1150px){.site-header{gap:12px}.brand{min-width:190px;font-size:18px}.brand-compass{width:38px;height:38px}.site-nav{padding-right:35px;gap:10px}.hero-copy{margin-left:20vw;width:49vw}.cards{width:calc(100vw - 22vw - 22px);margin-left:22vw;gap:2px}}
+@media(max-width:850px){.site-header{height:70px;padding:0 18px}.brand{min-width:0;flex:1;font-size:18px}.brand-compass{width:35px;height:35px}.site-nav{display:none;padding:16px 20px;gap:0;justify-content:flex-start}.site-nav.open{display:flex}.search-link{right:70px}.menu-toggle{display:block;margin:0}.hero{padding-top:90px}.hero-copy{margin:0 auto;width:min(90%,540px)}.cards{width:min(650px,96%);margin:62px auto 25px;padding:0 12px;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.card{aspect-ratio:2/3}}
+@media(max-width:520px){.site-header{gap:10px}.brand{font-size:15px}.brand-compass{width:31px;height:31px}.brand span{font-size:9px}.search-link{right:91px}.hero{padding-top:80px}.cards{width:100%;max-width:410px;padding:0 12px;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.hero-copy{width:91%}}
+
 </style>
 </head>
 <body>
 <div class="home" id="home">
 <header class="site-header">
-<a class="brand" href="#home" aria-label="World of Kairoth home"><div><span>WORLD OF</span>KAIROTH</div></a>
+<a class="brand" href="#home" aria-label="World of Kairoth home"><svg class="brand-compass" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="29" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="19" fill="none" stroke="currentColor" stroke-width="1"/><path d="M50 1L59 41 99 50 59 59 50 99 41 59 1 50 41 41Z" fill="currentColor"/><circle cx="50" cy="50" r="6" fill="#130e0b" stroke="#f3d5a1" stroke-width="2"/></svg><div><span>WORLD OF</span>KAIROTH</div></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" onclick="const n=document.getElementById('nav');let o=n.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false')">☰ Menu</button>
 <nav class="site-nav" id="nav" aria-label="Main navigation">
 <a href="#world">World</a><a href="#codex">Codex</a><a href="#characters">Characters</a><a href="#lineages">Lineages</a><a href="#factions">Factions</a><a href="#chronicles">Chronicles</a>
 </nav>
-<a class="search-link" href="#explore" aria-label="Explore the site"><span>Explore</span></a>
+<a class="search-link" href="#explore" aria-label="Explore the site"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 6 6"/></svg><span>Explore</span></a>
 </header>
 <main class="hero">
 <div class="hero-copy">
