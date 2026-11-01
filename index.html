@@ -86,55 +86,50 @@ footer{text-align:center;padding:25px;background:#0b0908;border-top:1px solid #5
 @media(max-width:520px){.site-header{gap:10px}.brand{font-size:15px}.brand-compass{width:31px;height:31px}.brand span{font-size:9px}.search-link{right:91px}.hero{padding-top:80px}.cards{width:100%;max-width:410px;padding:0 12px;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.hero-copy{width:91%}}
 
 
-/* Header refinement — restrained Grand Codex styling */
-.site-header{
- height:84px;padding:0 clamp(28px,3.2vw,64px);gap:0;
- background:linear-gradient(180deg,rgba(26,21,18,.98),rgba(10,9,8,.99) 72%);
- border-top:1px solid rgba(188,139,75,.33);
- border-bottom:1px solid #9d7545;
- box-shadow:0 2px 0 #22160d,0 8px 22px rgba(0,0,0,.42);
-}
-.site-header::before,.site-header::after{top:9px;width:25px;height:25px;border-color:#785329;opacity:.75}
-.brand{min-width:0;flex:0 0 290px;gap:15px;color:#dfb477;font-size:23px;letter-spacing:.08em;text-shadow:0 1px 8px #000}
-.brand-compass{width:43px;height:43px;color:#bc8b4e;filter:none}
-.brand div{padding-top:2px}.brand span{letter-spacing:.29em;font-size:10px;margin-bottom:3px;color:#c79e66}
-.site-nav{padding:0 61px 0 22px;gap:12px;justify-content:space-evenly;align-self:stretch}
-.site-nav a{display:flex;align-items:center;position:relative;font-size:clamp(11px,.83vw,14px);letter-spacing:.065em;text-transform:uppercase;color:#e2d1b8;transition:color .2s}
-.site-nav a::after{content:"";position:absolute;bottom:19px;left:50%;width:0;height:1px;transform:translateX(-50%);background:#d1a46b;transition:width .2s}
-.site-nav a:hover{color:#f9d6a0}.site-nav a:hover::after{width:80%}
-.search-link{right:clamp(24px,3.4vw,66px);width:34px;height:42px;color:#cfa66d}
-.search-link svg{width:23px;height:23px;stroke-width:1.6}
-.hero{min-height:calc(100svh - 84px)}
-@media(max-width:1200px){.site-header{padding:0 23px}.brand{flex-basis:215px;font-size:19px;gap:9px}.brand-compass{width:36px;height:36px}.site-nav{padding-left:8px;padding-right:54px;gap:10px}.site-nav a{font-size:11px}.search-link{right:23px}}
-@media(max-width:850px){.site-header{height:72px}.brand{flex:1;font-size:19px}.brand-compass{width:36px;height:36px}.site-nav{display:none;top:72px;align-self:auto;padding:14px 20px}.site-nav.open{display:flex}.site-nav a{padding:11px 0;font-size:13px}.site-nav a::after{display:none}.search-link{right:92px}.menu-toggle{margin-right:0}.hero{min-height:calc(100svh - 72px)}}
-@media(max-width:520px){.site-header{padding:0 17px}.brand{font-size:16px}.brand span{font-size:9px}.brand-compass{width:32px;height:32px}.search-link{right:89px}}
 
+/* Clean Grand Codex header — replaces earlier overlapping overrides */
+.site-header{
+ position:relative;z-index:50;height:78px;display:flex;align-items:center;
+ gap:28px;padding:0 34px;
+ background:linear-gradient(180deg,rgba(20,15,13,.97),rgba(10,8,8,.99));
+ border-top:1px solid rgba(196,147,81,.35);
+ border-bottom:1px solid rgba(196,147,81,.55);
+ box-shadow:0 6px 18px rgba(0,0,0,.35);
+ isolation:auto;
+}
+.site-header::before{content:"";position:absolute;inset:7px 10px;border:1px solid rgba(161,116,55,.44);pointer-events:none;z-index:0;width:auto;height:auto;top:7px;left:10px;right:10px;bottom:7px;clip-path:none;background:none;box-shadow:none;transform:none;padding:0}
+.site-header::after{content:"";position:absolute;left:14px;right:14px;top:auto;bottom:7px;height:1px;width:auto;transform:none;border:0;padding:0;background:linear-gradient(90deg,transparent,rgba(161,116,55,.4) 12%,rgba(161,116,55,.18) 50%,rgba(161,116,55,.4) 88%,transparent);pointer-events:none;box-shadow:none}
+.brand{position:relative;z-index:1;display:flex;align-items:center;gap:14px;min-width:240px;flex:0 0 auto;padding:0;color:#dfb477;text-decoration:none;font-size:22px;text-shadow:none}
+.brand-compass{width:42px;height:42px;flex-shrink:0;color:#c59655;filter:none}
+.brand div{display:flex;flex-direction:column;line-height:1.04;padding:0;border:0;letter-spacing:.05em}
+.brand span{font:400 10px 'Cinzel',serif;letter-spacing:.28em;color:#caa26a;margin-bottom:4px}
+.site-nav{position:relative;z-index:1;display:flex;flex:1;align-items:center;justify-content:center;align-self:auto;gap:clamp(20px,3vw,54px);padding:0}
+.site-nav a{position:relative;display:block;padding:6px 0;font:400 13px 'Cinzel',serif;letter-spacing:.08em;text-transform:uppercase;color:#e6d7c3;white-space:nowrap;transition:color .2s}
+.site-nav a::after{content:"";position:absolute;left:50%;bottom:-8px;width:0;height:1px;background:#d2a567;transform:translateX(-50%);transition:width .22s}
+.site-nav a:hover{color:#f4d29a}.site-nav a:hover::after{width:70%}
+.search-link{position:relative;z-index:1;right:auto;top:auto;transform:none;display:grid;place-items:center;width:34px;height:34px;color:#d7ab6e;flex:0 0 auto}
+.search-link svg{width:22px;height:22px;stroke-width:1.7}
+.menu-toggle{display:none}
+.hero{min-height:calc(100svh - 78px)}
 .cards{grid-template-columns:repeat(5,minmax(0,1fr));width:min(1000px,calc(100vw - clamp(310px,21vw,430px) - 42px))}
-@media(max-width:850px){.cards{width:min(650px,96%);grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:520px){.cards{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}}
-
-/* Grand Codex framed navigation */
-.site-header{
-  position:relative;height:88px;
-  padding:0 clamp(28px,3.3vw,66px);
-  border:0;
-  background:linear-gradient(180deg,#1b1511 0%,#100d0c 49%,#090807 100%);
-  box-shadow:0 8px 22px #0009;
-  isolation:isolate
+@media(max-width:1100px){
+ .site-header{padding:0 22px;gap:16px}.brand{min-width:195px;font-size:19px}.brand-compass{width:36px;height:36px}
+ .site-nav{gap:clamp(11px,1.9vw,23px)}.site-nav a{font-size:11px}
 }
-.site-header:before{content:"";position:absolute;inset:5px 8px;z-index:-1;pointer-events:none;border:1px solid #876033;box-shadow:inset 0 0 0 3px #100d0a,inset 0 0 0 4px #3e2b1c,0 0 0 1px #2b1d13;clip-path:polygon(0 0,98% 0,100% 25%,100% 100%,2% 100%,0 75%)}
-.site-header:after{content:"◆";position:absolute;left:50%;top:auto;bottom:0;transform:translate(-50%,50%);font:13px Georgia,serif;line-height:1;color:#c99a57;text-shadow:0 0 8px #000;background:#100c09;padding:0 9px;width:auto;height:auto;border:0}
-.brand{flex-basis:292px;gap:15px;font-size:23px}
-.brand-compass{height:48px;width:48px;color:#c79a58;filter:drop-shadow(0 1px 1px #000)}
-.brand div{border-right:1px solid #6d4a27;padding-right:30px}
-.site-nav{padding:0 60px 0 4px;gap:10px}
-.site-nav a{font-size:clamp(11px,.87vw,14px);letter-spacing:.055em}
-.site-nav a:after{bottom:23px}
-.search-link{right:clamp(30px,3.7vw,75px);color:#e0b77a}
-@media(max-width:1150px){.brand{flex-basis:220px;font-size:19px}.brand div{padding-right:13px}.brand-compass{width:40px;height:40px}.site-nav{padding-right:55px}}
-@media(max-width:850px){.site-header{height:75px}.brand{flex:1}.brand div{border-right:0}.site-nav{top:75px;isolation:isolate;z-index:20}.site-nav a:after{display:none}.search-link{right:96px}.site-header:after{font-size:10px}}
-@media(max-width:520px){.brand{font-size:16px}.brand-compass{width:34px;height:34px}.brand div{padding-right:0}}
-
+@media(max-width:900px){
+ .site-header{height:70px;padding:0 18px;gap:14px}
+ .brand{min-width:0;flex:1;font-size:17px}.brand-compass{width:34px;height:34px}.brand span{font-size:8px}
+ .menu-toggle{position:relative;z-index:2;display:inline-flex;align-items:center;justify-content:center;order:3;background:transparent;color:#ddb678;border:1px solid rgba(161,116,55,.5);padding:7px 10px;cursor:pointer;margin:0}
+ .site-nav{display:none;position:absolute;top:70px;left:12px;right:12px;z-index:20;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px;background:rgba(14,11,10,.98);border:1px solid rgba(161,116,55,.55)}
+ .site-nav.open{display:flex}.site-nav a{font-size:13px;padding:12px 0}.site-nav a::after{display:none}
+ .search-link{order:2}
+ .hero{min-height:calc(100svh - 70px)}
+ .cards{width:min(650px,96%);grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:520px){
+ .site-header{padding:0 15px;gap:10px}.brand{font-size:16px;gap:8px}.brand-compass{width:31px;height:31px}
+ .cards{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
