@@ -109,6 +109,9 @@ footer{text-align:center;padding:25px;background:#0b0908;border-top:1px solid #5
 @media(max-width:850px){.site-header{height:72px}.brand{flex:1;font-size:19px}.brand-compass{width:36px;height:36px}.site-nav{display:none;top:72px;align-self:auto;padding:14px 20px}.site-nav.open{display:flex}.site-nav a{padding:11px 0;font-size:13px}.site-nav a::after{display:none}.search-link{right:92px}.menu-toggle{margin-right:0}.hero{min-height:calc(100svh - 72px)}}
 @media(max-width:520px){.site-header{padding:0 17px}.brand{font-size:16px}.brand span{font-size:9px}.brand-compass{width:32px;height:32px}.search-link{right:89px}}
 
+.cards{grid-template-columns:repeat(5,minmax(0,1fr));width:min(1000px,calc(100vw - clamp(310px,21vw,430px) - 42px))}
+@media(max-width:850px){.cards{width:min(650px,96%);grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.cards{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -137,7 +140,7 @@ footer{text-align:center;padding:25px;background:#0b0908;border-top:1px solid #5
 <a class="card" id="characters" href="#about-world" aria-label="Characters"><img src="assets/characters.webp" alt="Characters — heroes, rulers, operatives, and key figures" loading="eager"></a>
 <a class="card" id="lineages" href="#about-world" aria-label="Lineages"><img src="assets/lineages.webp" alt="Lineages — races, bloodlines, heritage, and ancestral traits" loading="eager"></a>
 <a class="card" id="factions" href="#about-world" aria-label="Factions"><img src="assets/factions.webp" alt="Factions — orders, guilds, and powers" loading="eager"></a>
-<a class="card" id="chronicles" href="#about-world" aria-label="Chronicles"><img src="assets/chronicles.webp" alt="Chronicles — The Boy Named Rasa and other records" onerror="this.hidden=true;this.nextElementSibling.hidden=false" loading="eager"><span class="card-fallback" hidden><b>✒</b><strong>Chronicles</strong><em>The Boy Named Rasa and other records of the world</em></span></a>
+
 </div>
 </main>
 </div>
