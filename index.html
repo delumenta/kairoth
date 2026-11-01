@@ -112,6 +112,29 @@ footer{text-align:center;padding:25px;background:#0b0908;border-top:1px solid #5
 .cards{grid-template-columns:repeat(5,minmax(0,1fr));width:min(1000px,calc(100vw - clamp(310px,21vw,430px) - 42px))}
 @media(max-width:850px){.cards{width:min(650px,96%);grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:520px){.cards{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Grand Codex framed navigation */
+.site-header{
+  position:relative;height:88px;
+  padding:0 clamp(28px,3.3vw,66px);
+  border:0;
+  background:linear-gradient(180deg,#1b1511 0%,#100d0c 49%,#090807 100%);
+  box-shadow:0 8px 22px #0009;
+  isolation:isolate
+}
+.site-header:before{content:"";position:absolute;inset:5px 8px;z-index:-1;pointer-events:none;border:1px solid #876033;box-shadow:inset 0 0 0 3px #100d0a,inset 0 0 0 4px #3e2b1c,0 0 0 1px #2b1d13;clip-path:polygon(0 0,98% 0,100% 25%,100% 100%,2% 100%,0 75%)}
+.site-header:after{content:"◆";position:absolute;left:50%;top:auto;bottom:0;transform:translate(-50%,50%);font:13px Georgia,serif;line-height:1;color:#c99a57;text-shadow:0 0 8px #000;background:#100c09;padding:0 9px;width:auto;height:auto;border:0}
+.brand{flex-basis:292px;gap:15px;font-size:23px}
+.brand-compass{height:48px;width:48px;color:#c79a58;filter:drop-shadow(0 1px 1px #000)}
+.brand div{border-right:1px solid #6d4a27;padding-right:30px}
+.site-nav{padding:0 60px 0 4px;gap:10px}
+.site-nav a{font-size:clamp(11px,.87vw,14px);letter-spacing:.055em}
+.site-nav a:after{bottom:23px}
+.search-link{right:clamp(30px,3.7vw,75px);color:#e0b77a}
+@media(max-width:1150px){.brand{flex-basis:220px;font-size:19px}.brand div{padding-right:13px}.brand-compass{width:40px;height:40px}.site-nav{padding-right:55px}}
+@media(max-width:850px){.site-header{height:75px}.brand{flex:1}.brand div{border-right:0}.site-nav{top:75px;isolation:isolate;z-index:20}.site-nav a:after{display:none}.search-link{right:96px}.site-header:after{font-size:10px}}
+@media(max-width:520px){.brand{font-size:16px}.brand-compass{width:34px;height:34px}.brand div{padding-right:0}}
+
 </style>
 </head>
 <body>
