@@ -23,4 +23,71 @@ main{padding:35px 18px 80px}
 .parchment-bottom{width:100%;height:auto;display:block}
 @media(max-width:800px){main{padding:18px 8px 45px}.parchment-top{min-height:335px;aspect-ratio:auto;padding:88px 12% 28px}.parchment-top h1{font-size:clamp(26px,6vw,43px)}.parchment-top .lead{font-size:clamp(19px,4.1vw,26px)}.parchment-top .kicker{font-size:10px}.parchment-body{padding:22px clamp(40px,7vw,70px) 35px}.entries{grid-template-columns:1fr}.entry{padding:17px}}
 @media(max-width:420px){.parchment-top{min-height:315px;padding:83px 11% 24px}.parchment-body{padding:15px 34px 28px}.entry h3{font-size:16px}.entry p{font-size:18px}.section-heading{font-size:18px}}
-</style></head><body><header><div class="inner"><a class="brand" href="index.html"><small>WORLD OF</small>KAIROTH</a><button class="menu" aria-expanded="false" aria-controls="nav" onclick="const n=document.getElementById('nav');this.setAttribute('aria-expanded',String(n.classList.toggle('open')))">☰ Menu</button><nav id="nav" class="nav"><a href="index.html">Home</a><a href="world.html">World</a><a href="codex.html" class="active">Codex</a><a href="characters.html">Characters</a><a href="lineages.html">Lineages</a><a href="factions.html">Factions</a><a href="chronicles.html">Chronicles</a></nav></div></header><main><article class="paper parchment-shell"><div class="parchment-top"><div class="kicker">THE ARCHIVES OF KAIROTH</div><h1>The Grand Codex</h1><div class="ornament">✧</div><p class="lead">The collected knowledge of a world shaped by resonance, the First Flame, and the awakening of Blessings.</p></div><div class="parchment-body"><h2 class="section-heading">Contents of the Codex</h2><div class="entries"><div class="entry"><span class="number">VOLUME I</span><h3>The First Flame</h3><p>Origins, traditions, and the earliest accounts of resonance.</p></div><div class="entry"><span class="number">VOLUME II</span><h3>Blessings & Resonance</h3><p>The principles of Blessings and the forces that shape their expression.</p></div><div class="entry"><span class="number">VOLUME III</span><h3>Evolution</h3><p>Paths of growth, transformation, and their consequences.</p></div><div class="entry"><span class="number">VOLUME IV</span><h3>Kingdoms & Orders</h3><p>The institutions and powers that govern the realm.</p></div><div class="entry"><span class="number">VOLUME V</span><h3>Lineages</h3><p>Heritage, peoples, and ancestry across Kairoth.</p></div><div class="entry"><span class="number">VOLUME VI</span><h3>The Recorded Chronicles</h3><p>Stories and testimonies preserved through the ages.</p></div></div><p class="note">An opening index — full Codex entries can be added here next.</p></div><img class="parchment-bottom" src="assets/parchment/parchment-bottom.webp" alt="" aria-hidden="true" loading="lazy"></article></main><footer>WORLD OF KAIROTH · THE FIRST FLAME ENDURES</footer></body></html>
+
+/* Single continuous parchment: no stacked images and no visible joins */
+body{background:radial-gradient(ellipse at 50% 20%,#3d3024 0%,#211913 56%,#110e0b 100%);background-attachment:fixed}
+main{padding:44px 18px 78px}
+.paper.parchment-shell{
+ position:relative;isolation:isolate;overflow:hidden;
+ width:min(100%,1100px);max-width:1100px;min-height:780px;margin:0 auto;
+ padding:0 0 70px;
+ color:#422c1a;
+ background:
+  radial-gradient(ellipse at 50% 37%,rgba(255,250,230,.91) 0%,rgba(253,239,207,.69) 52%,transparent 90%),
+  radial-gradient(ellipse at 0 100%,rgba(177,121,58,.16),transparent 46%),
+  radial-gradient(ellipse at 100% 0,rgba(192,140,74,.17),transparent 38%),
+  repeating-linear-gradient(17deg,transparent 0 17px,rgba(125,80,36,.012) 18px 19px,transparent 20px 31px),
+  #ead4aa;
+ border:1px solid #c19c69;
+ border-radius:15px 11px 18px 13px / 12px 19px 13px 17px;
+ box-shadow:0 30px 65px #0008,inset 0 0 27px #b28c5780,inset 0 0 0 9px #f3dfb8;
+}
+.paper.parchment-shell::before{
+ content:"";display:block;position:absolute;inset:22px;z-index:0;pointer-events:none;
+ border:1px solid #a88049;
+ outline:1px solid #d5b078;outline-offset:5px;
+ border-radius:5px;opacity:.8;
+}
+.paper.parchment-shell::after{
+ content:"✦";display:block;position:absolute;left:50%;top:38px;transform:translateX(-50%);
+ width:145px;text-align:center;color:#ab793c;background:transparent;
+ font:42px Georgia,serif;pointer-events:none;
+}
+.parchment-top{
+ position:relative;z-index:1;min-height:0;aspect-ratio:auto;
+ background:none!important;
+ display:flex;align-items:center;flex-direction:column;justify-content:center;text-align:center;
+ padding:126px clamp(43px,9vw,135px) 24px;
+}
+.parchment-top .kicker{font-size:12px;letter-spacing:.24em;color:#94632e}
+.parchment-top h1{margin:13px 0;font-size:clamp(32px,4.7vw,59px)}
+.parchment-top .lead{margin:19px auto 10px;max-width:730px;font-size:clamp(23px,2.45vw,30px)}
+.parchment-body{
+ position:relative;z-index:1;min-height:0;
+ padding:30px clamp(48px,9vw,115px) 36px;
+ background:none!important;
+}
+.parchment-body .entry{
+ border:1px solid #bd9868;
+ box-shadow:inset 0 0 0 3px rgba(242,216,173,.45);
+ background:rgba(255,247,225,.27);
+}
+.parchment-bottom{display:none!important}
+.paper .section-heading{margin-top:0}
+.paper .note{margin-bottom:0}
+@media(max-width:800px){
+ main{padding:20px 9px 45px}
+ .paper.parchment-shell{padding-bottom:38px}
+ .paper.parchment-shell::before{inset:12px}
+ .paper.parchment-shell::after{top:23px;font-size:31px}
+ .parchment-top{padding:96px 33px 15px}
+ .parchment-body{padding:22px 34px 28px}
+ .parchment-top h1{font-size:clamp(26px,6.5vw,43px)}
+ .parchment-top .lead{font-size:clamp(20px,4.3vw,27px)}
+}
+@media(max-width:420px){
+ .parchment-top{padding:83px 27px 12px}
+ .parchment-body{padding:22px 25px 22px}
+ .entry{padding:18px}
+}
+</style></head><body><header><div class="inner"><a class="brand" href="index.html"><small>WORLD OF</small>KAIROTH</a><button class="menu" aria-expanded="false" aria-controls="nav" onclick="const n=document.getElementById('nav');this.setAttribute('aria-expanded',String(n.classList.toggle('open')))">☰ Menu</button><nav id="nav" class="nav"><a href="index.html">Home</a><a href="world.html">World</a><a href="codex.html" class="active">Codex</a><a href="characters.html">Characters</a><a href="lineages.html">Lineages</a><a href="factions.html">Factions</a><a href="chronicles.html">Chronicles</a></nav></div></header><main><article class="paper parchment-shell"><div class="parchment-top"><div class="kicker">THE ARCHIVES OF KAIROTH</div><h1>The Grand Codex</h1><div class="ornament">✧</div><p class="lead">The collected knowledge of a world shaped by resonance, the First Flame, and the awakening of Blessings.</p></div><div class="parchment-body"><h2 class="section-heading">Contents of the Codex</h2><div class="entries"><div class="entry"><span class="number">VOLUME I</span><h3>The First Flame</h3><p>Origins, traditions, and the earliest accounts of resonance.</p></div><div class="entry"><span class="number">VOLUME II</span><h3>Blessings & Resonance</h3><p>The principles of Blessings and the forces that shape their expression.</p></div><div class="entry"><span class="number">VOLUME III</span><h3>Evolution</h3><p>Paths of growth, transformation, and their consequences.</p></div><div class="entry"><span class="number">VOLUME IV</span><h3>Kingdoms & Orders</h3><p>The institutions and powers that govern the realm.</p></div><div class="entry"><span class="number">VOLUME V</span><h3>Lineages</h3><p>Heritage, peoples, and ancestry across Kairoth.</p></div><div class="entry"><span class="number">VOLUME VI</span><h3>The Recorded Chronicles</h3><p>Stories and testimonies preserved through the ages.</p></div></div><p class="note">An opening index — full Codex entries can be added here next.</p></div></article></main><footer>WORLD OF KAIROTH · THE FIRST FLAME ENDURES</footer></body></html>
