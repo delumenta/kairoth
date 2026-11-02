@@ -137,6 +137,19 @@ footer{text-align:center;padding:25px;background:#0b0908;border-top:1px solid #5
 .card img{display:block;width:100%;height:100%;object-fit:contain}
 @media(max-width:900px){.cards{width:min(690px,96vw);grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:50px auto 30px;padding:0}}
 @media(max-width:520px){.cards{width:min(420px,96vw);grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:42px auto 30px;padding:0}}
+
+/* Align the card row to the hero copy's left edge on desktop */
+@media(min-width:901px){
+ .hero{--hero-start:clamp(230px,19.5vw,405px)}
+ .hero-copy{margin-left:var(--hero-start)}
+ .cards{
+   margin:clamp(52px,5vw,82px) 0 44px var(--hero-start);
+   width:min(1120px,calc(100% - var(--hero-start) - 36px));
+   max-width:none;
+   grid-template-columns:repeat(5,minmax(0,1fr));
+   gap:clamp(9px,1.1vw,18px);
+ }
+}
 </style>
 </head>
 <body>
